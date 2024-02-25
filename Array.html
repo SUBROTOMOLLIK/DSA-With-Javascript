@@ -1,0 +1,57 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DSA With Javascript</title>
+ </head>
+ <body>
+    <div>
+         <!-- Array Traversing -->
+        <div style="margin-bottom: 10px;">
+         <input type="text" id="number">
+         <button onclick="clickData()">Submit</button>
+        </div>
+        <!-- Inser Element in Array -->
+        <div>
+         <input type="text" id="element">
+         <button id="eleInsert()">Insert</button>
+        </div>
+        <script>
+
+         /******** Array Traversing ********/
+
+         const data = [53,6,89,40,1,6,5,90,41,2,3,456,54,57,78];
+         // function for input value
+          function clickData(){
+            let value = document.getElementById('number').value;
+            if (value < data.length && typeof parseInt(value) === "number" && Math.sign(value) === 1) {
+               alert(data[value]);
+            }else{
+               alert('Please Enter Valid Input');
+            }  
+          }
+
+          /****** Insert Element in Array ******/
+
+          const element = [84,90,6,8,9,23,44,55,20,33,4];
+          let newEl = 50;
+          let position = 3;
+
+          // reverse for loop
+          for (let i =element.length -1; i >=0 ; i--) {
+            if(i >= position){
+               element[i+1] = element[i];
+
+               if (i == position) {
+                  element[i] = newEl;
+               }
+            
+            }
+          }
+          console.warn(element);
+
+        </script>
+    </div>
+ </body>
+ </html>
